@@ -1,0 +1,21 @@
+/* Navbar.css */
+.glowing-logo {
+    display: inline-block; /* Ensures a rounded border */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Initial glow */
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  .glowing-logo .logo {
+    display: block;
+    height: 50px; /* Adjust height */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+  }
