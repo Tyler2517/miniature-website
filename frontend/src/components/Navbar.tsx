@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +11,6 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { Link as RouterLink } from 'react-router-dom';
 import logo from '../images/logo-2.jpg'; // Import the logo image
 import './Navbar.css'; // Ensure you import the CSS file
 
@@ -67,8 +66,10 @@ const Navbar: React.FC = () => {
                 </Button>
               ))}
             </Box>
-            <Box className="glowing-logo"> {/* Add glowing-logo class here */}
-              <img src={logo} alt="Logo" className="logo" />
+            <Box className="glowing-logo">
+               <RouterLink to="/">
+                <img src={logo} alt="Logo" className="logo" />
+               </RouterLink>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {['Shop', 'Contact'].map((text) => (
@@ -89,8 +90,6 @@ const Navbar: React.FC = () => {
         {drawerList()}
       </Drawer>
     </Box>
-
-    
   );
 };
 
