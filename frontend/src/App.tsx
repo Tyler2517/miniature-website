@@ -1,3 +1,4 @@
+// src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -6,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Shop from './pages/Shop';
+import Events from './pages/Events'; // Import the Events component
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
@@ -20,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/events" element={<Events />} /> {/* Add Events route */}
           </Routes>
         </Container>
         <Footer /> {/* Add Footer component here */}

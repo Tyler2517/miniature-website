@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         Phone: (123) 456-7890
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-        {['Home', 'About', 'Shop', 'Contact'].map((text) => (
+        {['Home', 'About', 'Shop', 'Contact', 'Events'].map((text) => (
           <Button
             key={text}
             color="inherit"

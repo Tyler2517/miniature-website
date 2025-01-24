@@ -1,3 +1,4 @@
+// src/components/Navbar.tsx
 import React, { useState } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
   const drawerList = () => (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
-        {['Home', 'About', 'Contact, Shop'].map((text) => (
+        {['Home', 'Contact', 'Shop', 'Events'].map((text) => (
           <ListItem button key={text} component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
           </IconButton>
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {['Home', 'About'].map((text) => (
+              {['Home', 'Events'].map((text) => (
                 <Button
                   key={text}
                   color="inherit"
