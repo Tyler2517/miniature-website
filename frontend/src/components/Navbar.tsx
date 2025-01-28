@@ -4,7 +4,6 @@ import { useLocation, Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -33,7 +32,7 @@ const Navbar: React.FC = () => {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
         {['Home', 'Contact', 'Shop', 'Events'].map((text) => (
-          <ListItem button key={text} component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
+          <ListItem component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
