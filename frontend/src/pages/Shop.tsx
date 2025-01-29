@@ -1,9 +1,7 @@
-// src/pages/Home.tsx
-import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-const Home: React.FC = () => {
+const Shop: React.FC = () => {
   return (
     <Box>
       <Typography variant="h4" gutterBottom>
@@ -11,9 +9,11 @@ const Home: React.FC = () => {
       </Typography>
       <Typography variant="body1">
         Welcome to the shop page!
+        Here's is the link to the store:
+        <a href="https://www.theminiaturemanager.com">https://www.theminiaturemanager.com</a>
       </Typography>
     </Box>
   );
 };
 
-export default Home;
+export default Shop;
