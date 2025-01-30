@@ -9,8 +9,7 @@ const Shop: React.FC = () => {
       </Typography>
       <Typography variant="body1">
         Welcome to the shop page!
-        Here's is the link to the store:
-        <a href="https://www.theminiaturemanager.com">https://www.theminiaturemanager.com</a>
+        The shopping page is currently being worked. Come back soon!
       </Typography>
     </Box>
   );

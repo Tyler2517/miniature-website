@@ -41,7 +41,14 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
   return (
-    <Box>
+    <Box sx={{
+      padding: '20px',
+      maxWidth: '800px',
+      margin: '20px auto',
+      backgroundColor: '#f5f5f5', // Light background color
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    }}>
       <Typography variant="h4" gutterBottom>
         Contact Page
       </Typography>

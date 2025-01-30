@@ -11,12 +11,11 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import logo from '../images/logo-2.jpg'; // Import the logo image
+import logo from '../images/logo-2.png'; // Import the logo image
 import './Navbar.css'; // Ensure you import the CSS file
 
 const Navbar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const location = useLocation();
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (

@@ -13,10 +13,7 @@ const Footer: React.FC = () => {
       <Grid container spacing={2} justifyContent="space-between">
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="body2" align="center">
-            1234 Main St, Anytown, USA
-          </Typography>
-          <Typography variant="body2" align="center">
-            (123) 456-7890
+            76 E 1st N, Rexburg, ID 83440
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
             {['Home', 'About', 'Shop', 'Contact', 'Events'].map((text) => (
@@ -107,11 +104,6 @@ const Footer: React.FC = () => {
           </Box>
         </Grid>
       </Grid>
-      <Box sx={{ marginTop: '20px', textAlign: 'center' }}>
-        <Typography variant="body2">
-          &copy; {new Date().getFullYear()} The Miniature Manager. All rights reserved.
-        </Typography>
-      </Box>
     </Box>
   );
 };
