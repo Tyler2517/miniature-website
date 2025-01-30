@@ -68,9 +68,8 @@ const Home: React.FC = () => {
             variant="contained"
             sx={{ mr: 2, backgroundColor: '#800020', '&:hover': { backgroundColor: '#660017' } }}
             size="large"
-            href="https://www.theminiaturemanager.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            LinkComponent={RouterLink}
+            to="/shop"
           >
             Shop Now
           </Button>

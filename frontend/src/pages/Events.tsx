@@ -7,7 +7,7 @@ const Events = () => {
             <p style={styles.text}>Join us for exciting events at The Miniature Manager.</p>
             <section style={styles.section}>
                 <div style={styles.calendarContainer}>
-                <iframe src="https://calendar.google.com/calendar/embed?src=b28067071a8f3c2f1ea88313c7d86863657a0215a170e79cfc6d38890159c62a%40group.calendar.google.com&ctz=America%2FBoise" style={styles.calendar}></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?src=5defc6c620c3f04a56d807eaa890fe40745f1324e0d1047b74534b3d2b3e6b85%40group.calendar.google.com&ctz=America%2FBoise" style={styles.calendar}></iframe>
                 </div>
             </section>
         </div>
