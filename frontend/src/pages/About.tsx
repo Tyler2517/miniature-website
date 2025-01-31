@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Paper, Grid, Button } from '@mui/material';
+import { Container, Typography, Paper, Grid, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 

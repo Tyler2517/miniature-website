@@ -2,7 +2,6 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Slider from 'react-slick';
 import { Link as RouterLink } from 'react-router-dom';
@@ -64,15 +63,15 @@ const Home: React.FC = () => {
           Your one-stop shop for all hobby supplies and gaming needs!
         </Typography>
         <Box>
-          <Button
-            variant="contained"
-            sx={{ mr: 2, backgroundColor: '#800020', '&:hover': { backgroundColor: '#660017' } }}
-            size="large"
-            LinkComponent={RouterLink}
-            to="/shop"
-          >
-            Shop Now
-          </Button>
+        <Button
+          variant="contained"
+          sx={{ mr: 2, backgroundColor: '#800020', '&:hover': { backgroundColor: '#660017' } }}
+          size="large"
+          component={RouterLink}
+          to="/shop"
+        >
+          Shop Now
+        </Button>
           <Button
             variant="outlined"
             sx={{ color: 'white', borderColor: 'white', '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}

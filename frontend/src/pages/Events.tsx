@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Events = () => {
     return (
         <div style={styles.container}>
@@ -25,7 +23,7 @@ const styles = {
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
     },
     title: {
-        textAlign: 'center',
+        textAlign: 'center' as const,
         color: '#415256',
         fontSize: '2.5rem',
         marginBottom: '20px',
