@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    from_name: '',
     email: '',
     phone: '',
     message: ''
@@ -16,29 +16,17 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const getCSRFToken = () => {
-    const csrfToken = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('csrftoken='))
-      ?.split('=')[1];
-    return csrfToken;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    try {
+      await emailjs.sendForm('service_w0lq3d5', 'template_xwdr4qq', form, 'mWY6B6HhxHDTFiKqr');
+      alert('Email sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send email.');
+    }
   };
-
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  try {
-    const csrfToken = getCSRFToken();
-    await axios.post('/api/send_email', formData, {
-      headers: {
-        'X-CSRFToken': csrfToken,
-      },
-    });
-    alert('Email sent successfully!');
-  } catch (error) {
-    console.error('Error sending email:', error);
-    alert('Failed to send email.');
-  }
-};
 
   return (
     <Box sx={{
@@ -55,8 +43,8 @@ const handleSubmit = async (e: React.FormEvent) => {
       <form onSubmit={handleSubmit}>
         <TextField
           label="Name"
-          name="name"
-          value={formData.name}
+          name="from_name"
+          value={formData.from_name}
           onChange={handleChange}
           fullWidth
           margin="normal"
