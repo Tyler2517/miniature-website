@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/miniature-website">
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <Container sx={{ flex: 1 }}>
@@ -22,10 +22,9 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/events" element={<Events />} /> {/* Add Events route */}
+            <Route path="/events" element={<Events />} />
           </Routes>
-        </Container>
-        <Footer /> {/* Add Footer component here */}
+        </Container>        <Footer />
       </Box>
     </Router>
   );

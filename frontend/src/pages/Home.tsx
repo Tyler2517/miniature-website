@@ -30,15 +30,15 @@ const Home: React.FC = () => {
       }}
     >
       <Slider {...settings}>
-        <Box>
-          <img src="/src/images/people.jpg" alt="People Playing" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
-        </Box>
-        <Box>
-          <img src="/src/images/bolt_action.jpg" alt="Bolt Action" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
-        </Box>
-        <Box>
-          <img src="/src/images/conquest.jpg" alt="Conquest Game" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
-        </Box>
+      <Box>
+        <img src="/miniature-website/people.jpg" alt="People Playing" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
+      </Box>
+      <Box>
+        <img src="/miniature-website/bolt_action.jpg" alt="Bolt Action" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
+      </Box>
+      <Box>
+        <img src="/miniature-website/conquest.jpg" alt="Conquest Game" style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
+      </Box>
       </Slider>
       <Box
         sx={{
