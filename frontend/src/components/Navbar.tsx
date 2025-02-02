@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
         {['Home', 'Contact', 'Shop', 'Events'].map((text, index) => (
-          <ListItem button key={index} component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
+          <ListItem key={index} component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
