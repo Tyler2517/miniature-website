@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -11,11 +10,14 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import logo from '../images/logo-2.png'; // Import the logo image
-import './Navbar.css'; // Ensure you import the CSS file
 
 const Navbar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
@@ -30,8 +32,8 @@ const Navbar: React.FC = () => {
   const drawerList = () => (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
-        {['Home', 'Contact', 'Shop', 'Events'].map((text) => (
-          <ListItem component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
+        {['Home', 'Contact', 'Shop', 'Events'].map((text, index) => (
+          <ListItem button key={index} component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -40,55 +42,48 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#800020' }}> {/* Burgundy color */}
-        <Toolbar>
+    <AppBar position="static" sx={{ backgroundColor: '#800020' }}>
+      <Toolbar>
+        {isMobile ? (
           <IconButton
-            edge="start"
             color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
+            aria-label="open drawer"
+            edge="start"
             onClick={toggleDrawer(true)}
+            sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {['Home', 'Events'].map((text) => (
-                <Button
-                  key={text}
-                  color="inherit"
-                  component={RouterLink}
-                  to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}
-                >
-                  {text}
-                </Button>
-              ))}
-            </Box>
-            <Box className="glowing-logo">
-               <RouterLink to="/">
-                <img src={logo} alt="Logo" className="logo" />
-               </RouterLink>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {['Shop', 'Contact'].map((text) => (
-                <Button
-                  key={text}
-                  color="inherit"
-                  component={RouterLink}
-                  to={`/${text.toLowerCase()}`}
-                >
-                  {text}
-                </Button>
-              ))}
-            </Box>
+        ) : (
+          // Left side links for desktop
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-start' }}>
+            {['Home', 'Events'].map((text, index) => (
+              <Button key={index} color="inherit" component={RouterLink} to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>{text}</Button>
+            ))}
           </Box>
-        </Toolbar>
-      </AppBar>
+        )}
+        {/* Centered logo for all views */}
+        <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <RouterLink to="/">
+            <Box component="img" src={logo} alt="Logo" sx={{ height: { xs: '30px', md: '50px' } }} />
+          </RouterLink>
+        </Box>
+        {isMobile ? (
+          // Placeholder box to balance the toolbar layout on mobile
+          <Box sx={{ flexGrow: 1 }}></Box>
+        ) : (
+          // Right side links for desktop
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}>
+            {['Shop', 'Contact'].map((text, index) => (
+              <Button key={index} color="inherit" component={RouterLink} to={`/${text.toLowerCase()}`}>{text}</Button>
+            ))}
+          </Box>
+        )}
+      </Toolbar>
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         {drawerList()}
       </Drawer>
-    </Box>
+    </AppBar>
   );
 };
 
